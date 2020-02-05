@@ -1,0 +1,658 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', sans-serif; }
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold; }
+
+h2 {
+  margin-left: 5px; }
+
+button:disabled {
+  opacity: .5; }
+
+form {
+  padding: 10px 0; }
+  form input {
+    padding-left: 5px; }
+
+input,
+select,
+option,
+button:focus {
+  outline-style: none;
+  outline-width: 0 !important; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
+  a:visited {
+    color: grey; }
+
+/*╨Ф╨╗╤П ╤Д╨╛╤А╨╝╤Л*/
+fieldset {
+  padding: 30px 10px;
+  margin: 0 20px 10px;
+  background-color: #f7f7f7;
+  color: #091673;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); }
+
+input,
+select {
+  border: none;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+  padding: 7px 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #091673; }
+  input:hover,
+  select:hover {
+    cursor: pointer;
+    background-color: white; }
+
+h2, legend {
+  font-size: 2em;
+  font-weight: bold;
+  color: #091673;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #C9C9C9, 0 3px 0 #BBBBBB, 0 4px 0 #B9B9B9, 0 5px 0 #AAAAAA, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+
+.page_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.header_container,
+.footer_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f1ff; }
+
+.header_container {
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.2);
+  height: 200px; }
+
+.footer_container {
+  box-shadow: 0 -6px 4px -4px rgba(0, 0, 0, 0.2);
+  height: 70px; }
+
+.content_container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.header {
+  width: 100%;
+  height: 100%;
+  background: white url("../images/fruits4.jpg") no-repeat center;
+  background-size: cover; }
+
+.footer {
+  width: 100%;
+  height: 100%;
+  background: white url("../images/footer_img1.svg") no-repeat center;
+  background-size: cover; }
+
+.aside_link:hover, .aside_link.active {
+  color: #091673; }
+
+.cent {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 5px; }
+
+/*╨┤╨╗╤П ╨▒╨╗╨╛╨║╨░ aside*/
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 29%;
+  padding: 10px 5px;
+  margin-right: 1%;
+  background-color: #f9f5c44d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+  .aside ul {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    font-size: 1.5em;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), 10px 10px 10px rgba(0, 0, 0, 0.2); }
+  .aside li {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+    padding: 15px 5px;
+    margin-bottom: 30px; }
+    .aside li:hover {
+      transform: scale(1.07); }
+
+.main {
+  position: relative;
+  width: 70%;
+  background-color: #f9f5c44d;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #091673; }
+
+/*╨┤╨╗╤П ╨╝╨╡╨╜╤О ╨╕ ╨│╨░╨╝╨▒╤Г╤А╨│╨╡╤А╨░*/
+.menu_container {
+  display: none;
+  position: absolute;
+  text-align: center;
+  padding: 100px 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 5, 41, 0.95); }
+  .menu_container div {
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 20px; }
+    .menu_container div:hover {
+      cursor: pointer;
+      transform: scale(1.2); }
+
+.dsp_block {
+  display: block; }
+
+.gmb_container {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  display: none;
+  z-index: 10; }
+
+.gmb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 2px 2px 8px 1px grey;
+  background-size: contain;
+  background: white url("../images/menu33.png") no-repeat center; }
+  .gmb:hover {
+    transform: scale(1.03); }
+
+/*~~~~~~~~~~~~~~~~~~~~*/
+@media screen and (max-width: 730px) {
+  .cent {
+    flex-direction: column; }
+
+  .aside {
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 0 9px; }
+    .aside ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .aside ul a {
+        width: 32%;
+        height: 100%; }
+      .aside ul li {
+        display: block;
+        margin: 5px 0;
+        height: 100%; }
+
+  .main {
+    width: 100%; } }
+@media screen and (max-width: 590px) {
+  .aside {
+    display: none; }
+
+  .gmb_container {
+    display: block; } }
+@media screen and (max-width: 450px) {
+  h2 {
+    width: 70%; } }
+/*~~~~~~~~~~~~~~~~~~~~~~~*/
+/*╨┤╨╗╤П ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л about*/
+.about {
+  padding: 10px;
+  line-height: 1.5em; }
+  .about p {
+    margin-bottom: 20px;
+    text-align: justify; }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~*/
+/*╤Б╤В╤А╨░╨╜╨╕╤Ж╨░ calculator*/
+.button_calculate {
+  display: block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 2px 2px 8px 1px grey;
+  background-size: contain;
+  background: white url("../images/calculate.png") no-repeat center;
+  margin: 15px auto; }
+  .button_calculate:hover {
+    transform: scale(1.03); }
+
+.main_parameters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px; }
+  .main_parameters input {
+    width: 120px;
+    opacity: .7; }
+
+.age_parameter,
+.height_parameter,
+.weight_parameter {
+  position: relative;
+  opacity: .7; }
+
+.without_focus {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  z-index: -1; }
+
+.in_focus {
+  position: absolute;
+  bottom: 35px;
+  left: 0; }
+
+.activity ul {
+  margin-top: 15px;
+  width: 300px;
+  color: grey; }
+.activity ul > li {
+  margin-bottom: 15px; }
+  .activity ul > li > p:nth-child(1) {
+    font-weight: bold;
+    margin-bottom: 5px; }
+  .activity ul > li > p:nth-child(2) {
+    font-size: 0.7em; }
+  .activity ul > li:hover {
+    cursor: pointer;
+    color: #091673; }
+
+.none {
+  display: none; }
+
+.goal {
+  margin-top: 20px; }
+  .goal ul {
+    margin-top: 15px;
+    color: grey; }
+  .goal li {
+    margin-top: 5px; }
+    .goal li:hover {
+      font-weight: bold;
+      color: #091673;
+      cursor: pointer; }
+
+.change_goal {
+  margin-top: 20px; }
+  .change_goal p {
+    margin-bottom: 10px; }
+
+.PFC {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .PFC input {
+    width: 130px; }
+  .PFC label {
+    display: block;
+    margin-bottom: 5px; }
+
+@media screen and (max-width: 490px) {
+  .main_parameters {
+    flex-direction: column; }
+    .main_parameters > div {
+      margin-bottom: 30px;
+      align-self: center; }
+
+  fieldset {
+    padding: 10px; }
+
+  .PFC {
+    display: block; }
+    .PFC div {
+      margin-bottom: 10px;
+      text-align: center; } }
+@media screen and (max-width: 370px) {
+  .activity label,
+  .activity input,
+  .goal label,
+  .goal input {
+    display: block;
+    margin-bottom: 5px; } }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*╤Б╤В╤А╨░╨╜╨╕╤Ж╨░ eating*/
+.calculated_PFC {
+  padding: 0 10%; }
+  .calculated_PFC label {
+    display: inline-block;
+    margin-right: 10px;
+    width: 70px; }
+  .calculated_PFC input {
+    width: 70px;
+    margin-top: 5px;
+    padding-left: 5px; }
+  .calculated_PFC > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; }
+    .calculated_PFC > div > div {
+      /*
+      &:nth-child(2n) {
+       // margin: 0 30px;
+      }
+
+      &:nth-child(1) {
+      // width: 150px;
+      }
+    */ }
+      .calculated_PFC > div > div span {
+        border: 1px solid pink;
+        padding: 10px 5px; }
+  @media screen and (max-width: 450px) {
+    .calculated_PFC {
+      padding: 0 5px; } }
+  @media screen and (max-width: 370px) {
+    .calculated_PFC {
+      margin-left: 5%; }
+    .calculated_PFC > div {
+      display: block;
+      text-align: center; } }
+
+.button_clean_meal,
+.button_add_water,
+.button_add_product {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 1px grey;
+  background-size: contain; }
+
+.button_clean_meal {
+  background: white url("../images/remove1.png") no-repeat center; }
+
+.button_add_water {
+  background: white url("../images/water.png") no-repeat center; }
+
+.button_add_product {
+  background: white url("../images/meal.png") no-repeat center; }
+
+.main_buttons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative; }
+  .main_buttons > a:hover {
+    transform: scale(1.03); }
+  .main_buttons > a:nth-child(2) {
+    margin: 0 30px; }
+
+/*╨┤╨╗╤П ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л products ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М ╨┐╤А╨╛╨┤╤Г╨║╤В╤Л*/
+.form_add_products {
+  display: flex;
+  justify-content: center; }
+  .form_add_products_inputs {
+    margin-right: 30px; }
+    .form_add_products_inputs input {
+      display: block;
+      margin-bottom: 25px;
+      width: 200px;
+      padding-left: 5px; }
+  @media screen and (max-width: 470px) {
+    .form_add_products {
+      flex-direction: column; }
+    .form_add_products_inputs {
+      margin: 0 auto; } }
+
+.add_products_button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 1px grey;
+  background-size: contain;
+  background: white url("../images/plus.png") no-repeat center;
+  align-self: center; }
+  .add_products_button:hover {
+    transform: scale(1.03); }
+
+/*╤Н╤В╨╛ ╨╕ ╨┤╨╗╤П meals  ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡ eating ╨╕╨┤╨╗╤П water ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡ eating, ╤Н╤В╨╛ ╨▓╤Б╨┐╨╗╤Л╨▓╨░╤О╤Й╨╡╨╡ ╨╛╨║╨╜╨╛ ╤Б╨╡╤А╨╛╨╡*/
+.add_to_meals_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(179, 174, 174, 0.9);
+  text-align: center; }
+  .add_to_meals_list_input {
+    margin-right: 5%; }
+  .add_to_meals_list button {
+    width: 70px;
+    padding: 6px;
+    border: none;
+    color: #091673; }
+    .add_to_meals_list button:nth-child(2) {
+      margin: 0 5px; }
+    .add_to_meals_list button:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      background-color: #f1f150; }
+  @media screen and (max-width: 700px) {
+    .add_to_meals_list {
+      justify-content: space-between;
+      padding: 0 10px; }
+    .add_to_meals_list button {
+      display: block; }
+      .add_to_meals_list button:nth-child(2) {
+        margin: 5px 0; }
+    .add_to_meals_list_buttons {
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; } }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*╨╛╤В╤А╨╕╤Б╨╛╨▓╨║╨░ ╨┐╤А╨╛╨┤╤Г╨║╤В╨░ ╨╜╨░ ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Г ╨┐╤А╨╕ ╨┤╨╛╨▒╨░╨▓╨╗╨╡╨╜╨╕╨╕ ╨╜╨╛╨▓╨╛╨│╨╛, ╤Б╤В╤А╨░╨╜╨╕╤Ж╨░ ╨┤╨╛╨▒╨░╨▓╨╕╤В╤М ╨┐╤А╨╛╨┤╤Г╨║╤В╤Л*/
+.products_list {
+  margin: 0 8px; }
+
+.product {
+  position: relative;
+  display: flex;
+  margin: 15px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+  .product:hover {
+    transform: scale(1.02); }
+  .product_info {
+    width: 80%;
+    padding: 10px; }
+  .product_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    padding: 5px; }
+    .product_buttons > a {
+      display: block;
+      height: 30%;
+      text-align: center;
+      padding-top: 7px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+      .product_buttons > a:hover {
+        transform: scale(1.02); }
+      .product_buttons > a:visited {
+        text-decoration: none;
+        color: #091673; }
+  .product_components {
+    display: flex;
+    justify-content: space-between; }
+
+.transform_none {
+  transform: scale(0); }
+
+.product_proteins,
+.product_fats,
+.product_carbohydrates {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  border: 1px solid grey;
+  border-radius: 7px;
+  margin-top: 7px;
+  padding: 2px 3px; }
+
+.product_calories {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid grey;
+  border-radius: 7px;
+  padding: 2px 3px; }
+
+.product_proteins {
+  background-color: #ffffcb; }
+
+.product_fats {
+  background-color: #ffe6e1; }
+
+.product_carbohydrates {
+  background-color: #e1ffde; }
+
+.product_calories {
+  background-color: #ddebfb; }
+
+.add_products_button {
+  /*╨▒╨╛╨╗╤М╤И╨░╤П ╨║╨╜╨╛╨┐╨║╨░ ╨┤╨╗╤П ╨┤╨╛╨▒╨░╨▓╨╗╨╡╨╜╨╕╤П ╨┐╤А╨╛╨┤╤Г╨║╤В╨░ (╨┐╨╗╤О╤Б)*/
+  display: inline-block;
+  border: none; }
+
+@media screen and (max-width: 470px) {
+  .product {
+    flex-direction: column; }
+    .product_info {
+      width: 100%; }
+    .product_buttons {
+      width: 100%;
+      flex-direction: row; }
+      .product_buttons a {
+        width: 30%;
+        padding: 8px; } }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*╤Б╤В╨╕╨╗╨╕ ╨┤╨╗╤П ╤Б╤В╤А╨░╨╜╨╕╤З╨║╨╕ edit*/
+.product_edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px 30px; }
+  .product_edit_inputs {
+    width: 100%;
+    text-align: center; }
+    .product_edit_inputs input {
+      padding-left: 5px; }
+    .product_edit_inputs div {
+      margin-bottom: 20px; }
+    .product_edit_inputs label {
+      display: inline-block;
+      width: 30%;
+      margin-right: 5px; }
+  .product_edit_buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%; }
+
+.product_edit_btn_save,
+.product_edit_btn_back {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 1px grey;
+  background-size: contain;
+  border: none;
+  margin: 0 10%; }
+  .product_edit_btn_save:hover,
+  .product_edit_btn_back:hover {
+    transform: scale(1.03); }
+
+.product_edit_btn_back {
+  display: inline-block;
+  background: white url("../images/back.png") no-repeat center; }
+
+.product_edit_btn_save {
+  background: white url("../images/save.png") no-repeat center; }
+
+/*╤Б╤В╨╕╨╗╨╕ ╨┤╨╗╤П ╤Б╤В╤А╨░╨╜╨╕╤Ж╤Л eating ╨┤╨╗╤П ╨╛╤В╤А╨╕╤Б╨╛╨▓╨░╨╜╨╜╤Л╤Е meals*/
+.meal {
+  position: relative;
+  display: flex;
+  margin: 15px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #091673; }
+  .meal:hover {
+    transform: scale(1.02); }
+  .meal_info {
+    width: 80%;
+    padding: 10px; }
+  .meal_components {
+    display: flex;
+    justify-content: space-between; }
+
+.meal_proteins,
+.meal_fats,
+.meal_carbohydrates {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  border: 1px solid grey;
+  border-radius: 7px;
+  margin-top: 7px;
+  padding: 2px 3px; }
+
+.meal_calories {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid grey;
+  border-radius: 7px;
+  padding: 2px 3px; }
+
+.meal_proteins {
+  background-color: #ffffcb; }
+
+.meal_fats {
+  background-color: #ffe6e1; }
+
+.meal_carbohydrates {
+  background-color: #e1ffde; }
+
+.meal_calories {
+  background-color: #ddebfb; }
+
+.meal_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  padding: 5px; }
+  .meal_buttons > a {
+    display: block;
+    height: 45%;
+    text-align: center;
+    padding-top: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+    .meal_buttons > a:hover {
+      transform: scale(1.02); }
